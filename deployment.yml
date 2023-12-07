@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: shopping #The name of the shopping application container
-        image: bravukm/shopping:latest #The Docker image for building the shopping application container
+        image: bravukm/shopping:latest #The Docker image for building the shopping application container.
         ports:
         - containerPort: 3000 #The port for the shopping application   container
