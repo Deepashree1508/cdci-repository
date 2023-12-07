@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment #The name of the Kubernetes Deployment to be created in the Kubernetes cluster
+  labels:
+    app:shopping
+spec:
+  replicas: 2 #The number of pods to be created in the Kubernetes cluster for the shopping application container
+  selector:
+    matchLabels:
+      app: shopping
+  template:
+    metadata:
+      labels:
+        app: shopping 
+    spec:
+      containers:
+      - name: shopping #The name of the shopping application container
+        image: bravukm/shopping:latest #The Docker image for building the shopping application container
+        ports:
+        - containerPort: 3000 #The port for the shopping application   container
